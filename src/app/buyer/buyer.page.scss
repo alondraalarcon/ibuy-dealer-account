@@ -1,0 +1,63 @@
+@import "../../global.scss";
+
+.dealer-header
+{
+    padding-top:1rem;
+    padding-bottom:3rem;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height:100%;
+}
+.dealer-first-header{
+    border-bottom: 0px !important;   
+}
+.dealer-title
+{
+    font-size:1.8rem;
+    font-weight: 500;
+}
+
+.label
+{
+    font-weight: 600;
+    color: var(--ion-color-dark);
+}
+.list-label-header
+{
+    font-size:1.2rem;
+    color: var(--ion-color-primary);
+}
+.btn_sign_up{
+    font-size:1rem;
+}
+.error-text
+{
+    color:var(--ion-color-danger);
+    font-size: .800rem;
+    text-align: left;
+}
+ion-input{
+    border-radius: 10px !important;
+    padding-left: 30px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+    padding-top: .400rem !important;
+    padding-bottom: .400rem !important;
+    border: 1px solid #f1f1f1;
+    background: var(--ion-color-light);
+    width: 100%;
+}
+ion-select{
+    border-radius: 10px !important;
+    padding-left: 30px !important;
+    padding-right: 30px;
+    padding-top: .800rem !important;
+    padding-bottom: .800rem !important;
+    font-size: 0.9em;
+    border: 1px solid #f1f1f1;
+    background: var(--ion-color-light);
+    width: 100%;
+}
+ion-grid{
+    padding-top:2rem;
+}

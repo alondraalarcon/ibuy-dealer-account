@@ -1,0 +1,147 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons class="ion-padding-start" slot="start">
+      <ion-back-button
+        text=""
+        defaultHref="/"
+        icon="arrow-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary dealer-header">
+    <ion-title class="dealer-title">Dealer Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-list>
+        <ion-list-header class="list-label-header">
+          General Information
+        </ion-list-header>
+        <ion-item>
+          <ion-label class="label" position="stacked">Full Name</ion-label>
+          <ion-input formControlName="Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Email</ion-label><br />
+          <ion-input formControlName="Email"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="stacked"
+                >Business Category</ion-label
+              ><br />
+              <ion-select formControlName="Bs_Cat_id">
+                <ion-select-option
+                  *ngFor="let category of categories"
+                  value="{{category.tbl_business_cat_id}}"
+                  >{{category.tbl_business_cat_desc}}</ion-select-option
+                >
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="stacked"
+                >Emoney Balance</ion-label
+              ><br />
+              <ion-input formControlName="Emoney_Bal" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-list-header class="list-label-header">
+          Contact Details
+        </ion-list-header>
+        <ion-item>
+          <ion-label class="label" position="stacked">Telephone No.</ion-label
+          ><br />
+          <ion-input formControlName="TelNo" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Country</ion-label><br />
+          <ion-select
+            formControlName="Country_ID"
+            (ionChange)="onChangeCountry($event)"
+          >
+            <ion-select-option
+              *ngFor="let country of countries"
+              value="{{country.tbl_country_id}}"
+              >{{country.country}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Region</ion-label><br />
+          <ion-select
+            formControlName="Region_ID"
+            (ionChange)="onChangeRegion($event)"
+          >
+            <ion-select-option
+              *ngFor="let region of regions"
+              value="{{region.tbl_region_id}}"
+              >{{region.tbl_region_desc}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Province</ion-label><br />
+          <ion-select
+            formControlName="Province_ID"
+            (ionChange)="onChangeProvince($event)"
+          >
+            <ion-select-option
+              *ngFor="let province of provinces"
+              value="{{province.tbl_province_id}}"
+              >{{province.tbl_province_desc}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">City</ion-label><br />
+          <ion-select
+            formControlName="City_ID"
+            (ionChange)="onChangeCity($event)"
+          >
+            <ion-select-option
+              *ngFor="let city of cities"
+              value="{{city.tbl_city_id}}"
+              >{{city.tbl_city_desc}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Barangay</ion-label><br />
+          <ion-select formControlName="Brgy_ID">
+            <ion-select-option
+              *ngFor="let barangay of barangays"
+              value="{{barangay.tbl_brgy_id}}"
+              >{{barangay.tbl_brgy_desc}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Street No.</ion-label
+          ><br />
+          <ion-input formControlName="Add_StreetNo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label" position="stacked">Street</ion-label><br />
+          <ion-input formControlName="Add_Street"></ion-input>
+        </ion-item>
+        <ion-button
+          class="ion-padding-start ion-padding-end ion-margin-top btn_sign_up"
+          expand="block"
+          (click)="signUp()"
+          [disabled]="form.invalid"
+          >Submit</ion-button
+        ><br />
+      </ion-list>
+    </ion-grid>
+  </form>
+</ion-content>
